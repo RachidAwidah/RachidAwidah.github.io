@@ -56,12 +56,24 @@
     footer{padding:28px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
     @media(max-width:760px){.navlinks{gap:12px;font-size:.8rem}.hero{grid-template-columns:1fr;padding:65px 0;gap:30px}.profile-card{max-width:420px}.grid{grid-template-columns:1fr}.project{grid-column:auto}section{padding:55px 0}}
     @media(max-width:440px){.navlinks a:nth-child(2){display:none}.project-modules{grid-template-columns:1fr}.wrap{width:min(100% - 30px,1080px)}}
+    .language-switch{font:inherit;cursor:pointer;color:var(--accent);background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:9px 12px;min-height:44px}
+    .language-switch:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .project-previews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+    .project-previews figure{margin:0;min-width:0}
+    .project-previews img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+    .project-previews figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
+    .preview-note{font-size:.85rem;margin-top:12px!important}
+    [dir="rtl"] h1,[dir="rtl"] .section-title{letter-spacing:normal}
+    [dir="rtl"] .eyebrow,[dir="rtl"] .section-tag,[dir="rtl"] .project-meta{letter-spacing:normal}
+    [dir="rtl"] .contact-email a{direction:ltr;unicode-bidi:isolate;display:inline-block}
+    @media(max-width:600px){nav{flex-wrap:wrap;gap:8px;padding-top:10px;padding-bottom:10px}.navlinks{order:3;width:100%;justify-content:space-between}.navlinks a:nth-child(2){display:block}.project-previews{grid-template-columns:1fr}main [id]{scroll-margin-top:120px}}
   </style>
 </head>
 <body>
 <header><nav class="wrap">
   <a class="logo" href="#home">RA<span>.</span></a>
   <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<button class="language-switch" id="language-switch" type="button" aria-label="Switch to Arabic">العربية</button>
 </nav></header>
 <main>
   <div class="wrap hero" id="home">
@@ -119,6 +131,12 @@
         <span class="tag">Angular</span><span class="tag">Python</span><span class="tag">FastAPI</span>
         <span class="tag">PCA</span><span class="tag">K-means</span>
       </div>
+      <h4 style="margin:24px 0 8px">Project interface previews</h4>
+      <div class="project-previews">
+        <figure><a href="assets/school-home.jpg"><img src="assets/school-home.jpg" width="552" height="248" loading="lazy" alt="School analytics home and data upload interface"></a><figcaption>Home and data upload</figcaption></figure>
+        <figure><a href="assets/school-datasets.jpg"><img src="assets/school-datasets.jpg" width="552" height="248" loading="lazy" alt="School analytics dataset management interface"></a><figcaption>Dataset management</figcaption></figure>
+      </div>
+      <p class="preview-note">Screenshots extracted from the project report. Image detail is limited by PDF compression.</p>
       <h4 style="margin:24px 0 8px">Shared development</h4>
       <p>Co-developed with Thamer at the University of Aleppo. We worked together across the frontend, backend and data analysis, sharing responsibility throughout the project.</p>
       <div class="grid project-modules">
@@ -156,6 +174,39 @@
       }
     });
   }
+
+  const translations = {"About": "عني", "Skills": "المهارات", "Projects": "المشاريع", "Contact": "التواصل", "Junior Full Stack Developer": "مطوّر ويب متكامل مبتدئ", "Rachid": "رشيد", "Awidah.": "عويضة", "I build practical web applications with a focus on Angular and Laravel, bringing together thoughtful interfaces and reliable backend functionality.": "أطوّر تطبيقات ويب عملية باستخدام Angular وLaravel، وأربط واجهات سهلة الاستخدام بوظائف الخلفية والبيانات.", "Explore my work": "استعرض أعمالي", "Get in touch": "تواصل معي", "Download CV": "تحميل السيرة الذاتية", "Full Stack Developer": "مطوّر ويب متكامل", "Computer Engineering Graduate": "خريج هندسة الحاسوب", "Open to learning and opportunities": "أتطلع للتعلّم والفرص المهنية", "A little about me": "نبذة عني", "Building useful things": "أبني تطبيقات مفيدة", "with code.": "بالبرمجة.", "I'm a Junior Full Stack Developer and Computer Engineering graduate interested in creating practical, user-focused web applications. I work with Angular and Laravel and enjoy connecting frontend experiences with backend logic and data. I'm continuously developing my skills through hands-on projects and learning.": "أنا مطوّر ويب متكامل مبتدئ وخريج هندسة الحاسوب، مهتم ببناء تطبيقات عملية تراعي احتياجات المستخدم. أعمل باستخدام Angular وLaravel، وأستمتع بربط الواجهات بمنطق الخادم والبيانات. أواصل تطوير مهاراتي عبر المشاريع والتعلّم.", "My toolkit": "أدواتي", "Technologies & skills": "التقنيات والمهارات", "Frontend": "الواجهات الأمامية", "Backend": "تطوير الخلفية", "Data & tools": "البيانات والأدوات", "Selected work": "أعمال مختارة", "Full-stack web application · Personal project": "تطبيق ويب متكامل · مشروع شخصي", "POS & Business Management System": "نظام نقاط البيع وإدارة الأعمال", "A full-stack point-of-sale application designed to bring daily retail operations into one system, connecting sales workflows with inventory, purchasing, customer and supplier records, and business reporting.": "تطبيق نقاط بيع متكامل يجمع عمليات المتجر اليومية، ويربط المبيعات بالمخزون والمشتريات وسجلات العملاء والموردين وتقارير الأعمال.", "Core modules": "الوظائف الأساسية", "Sales & POS": "المبيعات ونقاط البيع", "Sales processing, barcode support, tax calculation, returns and payment integration.": "معالجة المبيعات، ودعم الباركود، وحساب الضرائب، والمرتجعات، وتكامل الدفع.", "Products & inventory": "المنتجات والمخزون", "Products, categories, warehouses, stock balances, adjustments and stock movements.": "إدارة المنتجات والتصنيفات والمستودعات وأرصدة المخزون وتسوياته وحركاته.", "Purchasing & partners": "المشتريات والعملاء والموردون", "Purchase orders, goods receipts, supplier records, customer records and account payments.": "أوامر الشراء واستلام البضائع وسجلات الموردين والعملاء ودفعات الحسابات.", "Operations & insights": "التشغيل والتقارير", "Cash shifts, role-based permissions, audit logs, and sales, product and profit reports.": "ورديات الصندوق والصلاحيات حسب الدور وسجلات التدقيق وتقارير المبيعات والمنتجات والأرباح.", "The application also documents Arabic and English interface support and multi-currency handling. It is packaged with Docker for local deployment.": "يوثّق التطبيق أيضاً دعم الواجهات بالعربية والإنجليزية والتعامل مع عدة عملات، وهو مجهّز باستخدام Docker للتشغيل محلياً.", "Explore source code on GitHub ↗": "استعرض الكود على GitHub ↗", "Graduation project · Two-person team · 2026": "مشروع تخرّج · فريق من شخصين · 2026", "Intelligent School Quality Analytics Platform": "نظام ذكي لتقييم المدارس وتحليل بياناتها", "A platform for analysing school data and producing interpretable quality scores. The project report documents validation on 882 schools, with a composite evaluation based on 20 indicators across seven criteria.": "منصة لتحليل بيانات المدارس وإنتاج درجات جودة قابلة للتفسير. يوثّق تقرير المشروع التحقق على بيانات 882 مدرسة، بتقييم مركّب يعتمد على 20 مؤشراً ضمن سبعة معايير.", "Shared development": "تطوير مشترك", "Co-developed with Thamer at the University of Aleppo. We worked together across the frontend, backend and data analysis, sharing responsibility throughout the project.": "طوّرت المشروع بالتعاون مع ثامر في جامعة حلب. عملنا معاً على الواجهات والخلفية وتحليل البيانات، وتشاركنا المسؤولية طوال مراحل المشروع.", "Data preparation & analysis": "تجهيز البيانات وتحليلها", "Data cleaning, descriptive statistics, correlation analysis and dimensionality reduction with PCA.": "تنظيف البيانات والإحصاءات الوصفية وتحليل الارتباط وتقليص الأبعاد باستخدام PCA.", "School comparison & evaluation": "مقارنة المدارس وتقييمها", "K-means clustering and an interpretable composite score to support comparison between schools.": "التجميع باستخدام K-means ودرجة مركّبة قابلة للتفسير لدعم المقارنة بين المدارس.", "Let's connect": "لنتواصل", "Find me online.": "تواصل معي عبر", "Email Me": "راسلني", "Rachid Awidah. Built with care.": "رشيد عويضة. صُنع بعناية.", "Project interface previews": "معاينات واجهات المشروع", "Home and data upload": "الرئيسية ورفع البيانات", "Dataset management": "إدارة مجموعات البيانات", "Screenshots extracted from the project report. Image detail is limited by PDF compression.": "صور مستخرجة من تقرير المشروع. تفاصيل الصور محدودة بسبب ضغط ملف PDF."};
+  const languageButton = document.getElementById("language-switch");
+  const textNodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.parentElement.closest("script, style, #language-switch")) continue;
+    const original = node.textContent;
+    if (Object.hasOwn(translations, original.trim())) textNodes.push({ node, original });
+  }
+  function setLanguage(language) {
+    const arabic = language === "ar";
+    document.documentElement.lang = arabic ? "ar" : "en";
+    document.documentElement.dir = arabic ? "rtl" : "ltr";
+    for (const { node, original } of textNodes) {
+      node.textContent = arabic ? original.replace(original.trim(), translations[original.trim()]) : original;
+    }
+    languageButton.textContent = arabic ? "English" : "العربية";
+    languageButton.setAttribute("aria-label", arabic ? "التبديل إلى الإنجليزية" : "Switch to Arabic");
+    document.title = arabic ? "رشيد عويضة | مطوّر ويب متكامل" : "Rachid Awidah | Full Stack Developer";
+    const descriptions = {
+      en: "Rachid Awidah — Junior Full Stack Developer focused on Angular and Laravel.",
+      ar: "رشيد عويضة، مطوّر ويب متكامل مبتدئ يعمل باستخدام Angular وLaravel."
+    };
+    document.querySelector('meta[name="description"]').content = descriptions[arabic ? "ar" : "en"];
+    try { localStorage.setItem("portfolio-language", language); } catch {}
+  }
+  let savedLanguage = "en";
+  try { savedLanguage = localStorage.getItem("portfolio-language") || "en"; } catch {}
+  setLanguage(savedLanguage === "ar" ? "ar" : "en");
+  languageButton.addEventListener("click", () => setLanguage(document.documentElement.lang === "ar" ? "en" : "ar"));
+
 </script>
 </body>
 </html>
