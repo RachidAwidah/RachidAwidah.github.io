@@ -1,24 +1,56 @@
-# Rachid Awidah — Portfolio
+<p align="center">
+  <img src="profile.jpg" width="120" alt="Rachid Awidah">
+</p>
 
-A responsive, dark personal portfolio built with plain HTML, CSS, and JavaScript.
+<h1 align="center">Rachid Awidah</h1>
+<p align="center"><strong>Junior Full Stack Developer</strong><br>Computer Engineering Graduate · University of Aleppo · 2026</p>
 
-## Publish with GitHub Pages
-1. Create a public repository named `RachidAwidah.github.io`.
-2. Upload `index.html` to the repository root.
-3. Open the repository's **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select **main** and **/(root)**, then Save.
-6. Your site will be published at `https://RachidAwidah.github.io`.
+<p align="center">
+  <a href="https://rachidawidah.github.io">Portfolio</a> ·
+  <a href="https://rachidawidah.github.io/Rachid-Awidah-CV.pdf">Download CV</a> ·
+  <a href="mailto:Rachidawidah1@gmail.com">Email Me</a> ·
+  <a href="https://www.linkedin.com/in/%D8%B1%D8%B4%D9%8A%D8%AF-%D8%B9%D9%88%D9%8A%D8%B6%D8%A9-114357429/">LinkedIn</a>
+</p>
 
-Review the skills and project description before publishing so they accurately reflect your current experience.
+## About me
 
-## Update the existing site from Android
+I build practical web applications with Angular and Laravel, connecting frontend interfaces with backend logic and data. I am developing my skills through personal projects and collaborative work, and I am interested in Junior Full Stack Developer opportunities.
 
-Extract the ZIP. Open the repository in Chrome and enable **Desktop site** if
-the upload controls are hidden. On the Pages source branch (normally **main**),
-select **Add file → Upload files**, choose the updated `index.html` and `Rachid-Awidah-CV.pdf`, and commit
-the change. `profile.jpg` is already in the repository. The archive includes
-it so the page can also be previewed locally with its original portrait.
+## Technologies
 
-Check the deployment in **Actions**, then open the site and test both email
-links and the **Download CV** button. Android opens the mail app configured for `mailto:` links.
+| Area | Technologies |
+| --- | --- |
+| Frontend | Angular, TypeScript, HTML, CSS, JavaScript |
+| Backend | Laravel, PHP, Python, FastAPI |
+| Data and tools | MySQL, Git, GitHub, Docker |
+
+## Selected projects
+
+### POS & Business Management System
+
+A personal full-stack project built with Angular, Laravel, PHP and MySQL. It brings together sales, inventory, purchasing, customer and supplier records, role-based permissions, and business reports. Packaged with Docker for local deployment.
+
+[Explore the source code](https://github.com/RachidAwidah/pos_system)
+
+### Intelligent School Quality Analytics Platform
+
+A graduation project developed with Thamer in a two-person team, sharing work across frontend, backend and data analysis. Built with Angular and Python/FastAPI, the platform uses PCA and K-means for school data analysis. The project report documents validation of its scoring system on 882 schools, with a composite score based on 20 indicators.
+
+## About this portfolio
+
+A responsive website built with HTML, CSS and JavaScript, featuring a navy and green theme, contact links, a downloadable CV, and lightweight animations that respect reduced-motion preferences.
+
+| File | Purpose |
+| --- | --- |
+| `index.html` | Page content, styles and interactions |
+| `profile.jpg` | Profile photo |
+| `Rachid-Awidah-CV.pdf` | Downloadable resume |
+
+## Update from Android
+
+1. Open this repository in your mobile browser. Enable **Desktop site** if needed.
+2. Select **Add file → Upload files** on the Pages source branch.
+3. Upload the files you changed and select **Commit changes**.
+4. Check the deployment in **Actions**, then open the portfolio and test your changes.
+
+GitHub Pages serves this site from the root of the `main` branch. To preview locally, download the repository and open `index.html` with its accompanying files in the same folder.
