@@ -38,11 +38,14 @@ A graduation project developed with Thamer in a two-person team, sharing work ac
 
 ## About this portfolio
 
-A responsive website built with HTML, CSS and JavaScript, featuring a navy and green theme, contact links, a downloadable CV, and lightweight animations that respect reduced-motion preferences.
+A responsive website built with HTML, CSS and JavaScript, featuring the approved white and lavender design, contact links, a downloadable CV, and lightweight animations that respect reduced-motion preferences.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Page content, styles and interactions |
+| `index.html` | Semantic page content |
+| `style.css` | Responsive layout, RTL and reduced-motion styles |
+| `script.js` | Arabic/English language switch |
+| `assets/` | Local fonts, icons and project illustrations |
 | `profile.jpg` | Profile photo |
 | `Rachid-Awidah-CV.pdf` | Downloadable resume |
 
