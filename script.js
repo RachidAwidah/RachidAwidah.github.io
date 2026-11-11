@@ -36,7 +36,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 (() => {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || !('IntersectionObserver' in window)) return;
-  const targets = [...document.querySelectorAll('.selected-work .section-heading, .project-card, .about-section .section-heading, .about-layout > div, .project-detail, .contact-section')];
+  const targets = [...document.querySelectorAll('.selected-work .section-heading, .project-card, .about-section .section-heading, .about-layout > div, .project-detail > :not(.grid):not(.project-previews), .project-detail .tile, .project-previews figure, .contact-section > *')];
   const show = element => {
     element.classList.remove('reveal-pending');
     element.classList.add('reveal-visible');
@@ -44,11 +44,10 @@ document.getElementById("year").textContent = new Date().getFullYear();
   };
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if (entry.isIntersecting) show(entry.target); });
-  }, { threshold: 0, rootMargin: '0px 0px -35px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -55px 0px' });
   targets.forEach(element => {
-    if (element.getBoundingClientRect().top < window.innerHeight) return;
     element.classList.add('reveal-pending');
-    if (element.matches('.project-card:nth-child(2)')) element.style.setProperty('--reveal-delay', '90ms');
+    if (element.matches('.project-card:nth-child(2)')) element.style.setProperty('--reveal-delay', '160ms');
     observer.observe(element);
   });
   const revealTarget = target => {

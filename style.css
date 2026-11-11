@@ -91,7 +91,30 @@ footer{border-top:1px solid var(--line);padding-block:25px;display:flex;justify-
 .frontend-label{top:17%}.backend-label{top:39%}.database-label{top:61%}
 .architecture figcaption{text-align:center;font-size:12px;color:var(--muted);margin-top:4px}
 @media(prefers-reduced-motion:no-preference){
-  .reveal-pending{opacity:0;transform:translateY(22px)}
-  .reveal-visible{animation:section-reveal .65s cubic-bezier(.2,.65,.3,1) var(--reveal-delay,0ms) both}
-  @keyframes section-reveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  .reveal-pending{opacity:0;transform:translateY(34px)}
+  .reveal-visible{animation:section-reveal .85s cubic-bezier(.2,.65,.3,1) var(--reveal-delay,0ms) both}
+  @keyframes section-reveal{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+}
+
+/* Deliberate entrance sequence and touch-friendly interaction feedback. */
+@media(prefers-reduced-motion:no-preference){
+ .hero-copy{animation:none}
+ .hero-copy>h1 span{animation:section-reveal .85s cubic-bezier(.2,.65,.3,1) both}
+ .hero-copy>h1 span:nth-child(2){animation-delay:140ms}
+ .hero-intro{animation:section-reveal .85s 240ms both}
+ .hero-actions{animation:section-reveal .85s 380ms both}
+ .hero-stack{animation:section-reveal .85s 520ms both}
+ .architecture{animation:appear 1s 200ms both}
+ .architecture-visual{animation:diagram-float 5s ease-in-out infinite}
+ @keyframes diagram-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+ .button img,.card-arrow img{transition:translate .25s ease}
+ .button:hover img,.project-card:hover .card-arrow img{translate:5px 0}
+ [dir=rtl] .button:hover img,[dir=rtl] .project-card:hover .card-arrow img{translate:-5px 0}
+ .project-art{transition:scale .4s ease}
+ .project-card:hover .project-art{scale:1.045}
+ .button:active,.social-links a:active,#language-switch:active{transform:scale(.96)}
+ .project-card:active{scale:.985}
+ nav a{position:relative}
+ nav a::after{content:"";position:absolute;inset-inline:0;bottom:5px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s}
+ nav a:hover::after,nav a:focus-visible::after{transform:scaleX(1)}
 }
