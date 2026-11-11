@@ -18,6 +18,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
       node.textContent = arabic ? original.replace(original.trim(), translations[original.trim()]) : original;
     }
     languageButton.textContent = arabic ? "English" : "العربية";
+    document.querySelector(".menu-toggle").setAttribute("aria-label", arabic ? "القائمة الرئيسية" : "Main navigation");
     languageButton.setAttribute("aria-label", arabic ? "التبديل إلى الإنجليزية" : "Switch to Arabic");
     document.title = arabic ? "رشيد عويضة | مطوّر ويب متكامل مبتدئ" : "Rachid Awidah | Junior Full Stack Developer";
     const descriptions = {
@@ -67,3 +68,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
     if (event.matches) { targets.forEach(show); observer.disconnect(); }
   });
 })();
+
+// Compact navigation retains normal links and keyboard access.
+const menuButton = document.querySelector('.menu-toggle');
+const mainNavigation = document.getElementById('main-navigation');
+function closeMenu() { menuButton.setAttribute('aria-expanded', 'false'); }
+menuButton.addEventListener('click', () => {
+  menuButton.setAttribute('aria-expanded', String(menuButton.getAttribute('aria-expanded') !== 'true'));
+});
+mainNavigation.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeMenu(); if (mainNavigation.contains(document.activeElement)) menuButton.focus(); } });
+document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
