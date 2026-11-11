@@ -32,3 +32,39 @@ document.getElementById("year").textContent = new Date().getFullYear();
   setLanguage(savedLanguage === "ar" ? "ar" : "en");
   languageButton.addEventListener("click", () => setLanguage(document.documentElement.lang === "ar" ? "en" : "ar"));
 
+// Reveal content once as it enters the viewport; the hero stays immediately visible.
+(() => {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || !('IntersectionObserver' in window)) return;
+  const targets = [...document.querySelectorAll('.selected-work .section-heading, .project-card, .about-section .section-heading, .about-layout > div, .project-detail, .contact-section')];
+  const show = element => {
+    element.classList.remove('reveal-pending');
+    element.classList.add('reveal-visible');
+    observer.unobserve(element);
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) show(entry.target); });
+  }, { threshold: 0, rootMargin: '0px 0px -35px 0px' });
+  targets.forEach(element => {
+    if (element.getBoundingClientRect().top < window.innerHeight) return;
+    element.classList.add('reveal-pending');
+    if (element.matches('.project-card:nth-child(2)')) element.style.setProperty('--reveal-delay', '90ms');
+    observer.observe(element);
+  });
+  const revealTarget = target => {
+    targets.forEach(element => {
+      if (element === target || element.contains(target) || target.contains(element)) show(element);
+    });
+  };
+  document.addEventListener('focusin', event => revealTarget(event.target));
+  const revealHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = document.getElementById(id);
+    if (target) revealTarget(target);
+  };
+  window.addEventListener('hashchange', revealHash);
+  revealHash();
+  motion.addEventListener('change', event => {
+    if (event.matches) { targets.forEach(show); observer.disconnect(); }
+  });
+})();
