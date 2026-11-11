@@ -171,3 +171,74 @@ nav a{min-height:44px;display:flex;align-items:center}
  .project-card{padding:22px}
  .project-card h3{font-size:25px}
 }
+
+/* Device-specific composition: desktop keeps its established arrangement. */
+.menu-toggle{display:none}
+@media(max-width:1024px){
+ html{scroll-padding-top:100px}
+ .header-inner{width:calc(100% - 48px);min-height:88px;display:grid;grid-template-columns:minmax(0,1fr) auto;padding-block:12px;gap:0 20px}
+ .identity{min-width:0;gap:12px}.identity-copy{min-width:0;padding-inline-start:12px}
+ .identity-copy strong,[dir=rtl] .identity-copy strong{font-size:22px}
+ .identity-copy>span{font-size:13px}.avatar{width:48px;height:54px}
+ .header-actions{gap:10px;grid-column:2;grid-row:1}.header-actions .social-links{display:none}
+ .menu-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);font-size:24px;cursor:pointer}
+ .header-inner nav{display:none;grid-column:1 / -1;width:100%;order:initial;justify-content:space-around;gap:16px;margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+ .header-inner:has(.menu-toggle[aria-expanded=true]) nav{display:flex}
+ .hero,[dir=rtl] .hero{display:grid;grid-template-columns:1fr;min-height:0;height:auto;gap:24px;padding:40px 32px 28px}
+ .hero-copy{width:100%;max-width:720px;padding:0;margin-inline:auto}
+ .hero h1,[dir=rtl] .hero h1{font-size:clamp(36px,5.5vw,48px);margin-bottom:20px;line-height:1.25}
+ [dir=rtl] .hero h1{line-height:1.6}
+ .hero-intro{font-size:18px;max-width:640px;margin-bottom:24px}
+ .hero-actions{align-items:center;gap:28px}.hero-stack{margin-top:24px;font-size:16px}
+ .architecture,[dir=rtl] .architecture{width:100%;max-width:440px;margin:0 auto}
+ .hero::before,[dir=rtl] .hero::before{inset:0;clip-path:none;transform:none;background:linear-gradient(160deg,#eeebff,transparent 85%)}
+ .selected-work{padding-top:24px}.project-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .project-card{padding:24px;min-height:260px}.project-card h3{font-size:26px}
+ .card-copy,.project-card .card-copy{width:100%}.card-copy h3{max-width:100%}
+ .project-art{opacity:.2;width:45%}.about-layout{grid-template-columns:1fr;gap:28px}
+ .content-section{padding-top:56px}.project-detail{scroll-margin-top:110px}
+}
+@media(max-width:600px){
+ .container,.header-inner{width:calc(100% - 36px)}
+ .header-inner{min-height:76px;gap:0 8px}.identity{gap:8px}
+ .avatar{width:38px;height:44px}.identity-copy{border:0;padding:0}
+ .identity-copy strong,[dir=rtl] .identity-copy strong{font-size:17px;letter-spacing:-.4px}
+ .identity-copy>span{font-size:10px}.header-actions{gap:6px}
+ #language-switch{padding:4px 9px;font-size:12px;min-height:44px}
+ .menu-toggle{width:44px}.header-inner nav{font-size:16px}
+ .hero,[dir=rtl] .hero{padding:30px 20px 24px;gap:28px}
+ .hero h1,[dir=rtl] .hero h1{font-size:clamp(30px,7.7vw,40px);line-height:1.22;letter-spacing:-1.1px;margin-bottom:18px}
+ [dir=rtl] .hero h1{line-height:1.55;letter-spacing:0}
+ .hero-intro{font-size:16px;line-height:1.65;margin-bottom:22px}
+ .hero-actions{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
+ .hero-actions .button{width:100%;min-height:50px;font-size:16px;justify-content:space-between;padding-inline:20px}
+ .cv-link{display:flex;align-items:center;justify-content:center;min-height:44px;font-size:16px;text-underline-offset:6px}
+ .hero-stack{width:100%;justify-content:center;flex-wrap:wrap;margin-top:18px;row-gap:8px;font-size:14px}
+ .hero-stack li{padding-inline:16px}.hero-stack li:last-child{padding-inline-end:0}
+ .architecture,[dir=rtl] .architecture{max-width:none;margin:0;width:100%}
+ .architecture-visual{display:grid;gap:0;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.7);padding:4px 16px;animation:none}
+ .architecture-visual>img{display:none}
+ .architecture-label{position:static;width:auto;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;padding:12px 0;line-height:1.4;align-items:center}
+ .architecture-label+.architecture-label{border-top:1px solid var(--line)}
+ .architecture-label::before{grid-row:1 / 3;content:'01';color:var(--accent);font-size:13px;font-weight:800}
+ .backend-label::before{content:'02'}.database-label::before{content:'03'}
+ .architecture-label strong{font-size:16px;border:0;padding:0}
+ .architecture-label span{font-size:14px;white-space:normal;padding-top:3px}
+ .architecture figcaption{font-size:11px;margin-top:8px}
+ .selected-work{padding-top:28px}.section-heading{gap:16px;margin-bottom:18px}
+ .section-heading h2{font-size:28px}.project-cards{grid-template-columns:1fr;gap:16px}
+ .project-card{padding:22px;min-height:0}.project-card h3{font-size:27px;line-height:1.25}
+ .project-card p{font-size:16px}.project-art{opacity:.13;width:42%}
+ .tags li,.tag{font-size:13px}.card-arrow{margin-top:20px}
+ .skills{grid-template-columns:1fr;gap:0}.skills p{font-size:15px}
+ .project-detail{padding:20px;scroll-margin-top:100px}.project-detail h2{font-size:25px;overflow-wrap:break-word}
+ .project-detail .grid,.project-previews{grid-template-columns:1fr}
+ .content-section{padding-top:44px}.contact-actions{align-items:stretch}
+ footer{flex-direction:column;gap:8px;font-size:12px}
+}
+@media(max-width:360px){
+ .container,.header-inner{width:calc(100% - 28px)}
+ .identity-copy strong,[dir=rtl] .identity-copy strong{font-size:15px}
+ .identity-copy>span{font-size:9px}.avatar{width:32px;height:39px}
+ .hero,[dir=rtl] .hero{padding-inline:16px}.hero-stack li{padding-inline:12px}
+}
