@@ -34,7 +34,7 @@ A personal full-stack project built with Angular, Laravel, PHP and MySQL. It bri
 
 ### Intelligent School Quality Analytics Platform
 
-A graduation project developed with Thamer in a two-person team, sharing work across frontend, backend and data analysis. Built with Angular and Python/FastAPI, the platform uses PCA and K-means for school data analysis. The project report documents validation of its scoring system on 882 schools, with a composite score based on 20 indicators.
+A graduation project at the University of Aleppo. Built with Angular and Python/FastAPI, the platform uses PCA and K-means for school data analysis. The project report documents validation of its scoring system on 882 schools, with a composite score based on 20 indicators.
 
 ## About this portfolio
 
