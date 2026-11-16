@@ -36,6 +36,10 @@ A personal full-stack project built with Angular, Laravel, PHP and MySQL. It bri
 
 A graduation project at the University of Aleppo. Built with Angular and Python/FastAPI, the platform uses PCA and K-means for school data analysis. The project report documents validation of its scoring system on 882 schools, with a composite score based on 20 indicators.
 
+### INGCO Syria — E-commerce Backend
+
+A project for an INGCO agent in Syria, developed during a one-month training programme at Spica Agency in Al-Aziziyah, Aleppo. As part of a three-person backend team, I contributed across e-commerce, accounting and other backend modules, as well as API documentation and Postman testing. Technologies: Laravel, PHP, REST APIs and Postman.
+
 ## About this portfolio
 
 A responsive website built with HTML, CSS and JavaScript, featuring the approved white and lavender design, contact links, a downloadable CV, and lightweight animations that respect reduced-motion preferences.

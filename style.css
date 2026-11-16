@@ -242,3 +242,7 @@ nav a{min-height:44px;display:flex;align-items:center}
  .identity-copy>span{font-size:9px}.avatar{width:32px;height:39px}
  .hero,[dir=rtl] .hero{padding-inline:16px}.hero-stack li{padding-inline:12px}
 }
+
+.training-card{grid-column:1/-1;min-height:220px;background:var(--wash)}
+.training-card .card-copy{width:100%}.training-card h3{max-width:100%}
+@media(max-width:650px){.training-card h3{font-size:25px}.training-card{min-height:250px}}
